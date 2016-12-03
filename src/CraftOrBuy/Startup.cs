@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using CraftOrBuy.Data;
 using Microsoft.EntityFrameworkCore;
 using CraftOrBuy.Repositories;
+using System.IO;
 
 namespace CraftOrBuy
 {
@@ -36,13 +37,13 @@ namespace CraftOrBuy
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-
             services.AddDbContext<COBDataContext>(o => 
                 o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IRecipesRepository, RecipesRepository>();
             services.AddScoped<IItemsRepository, ItemsRepository>();
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +56,7 @@ namespace CraftOrBuy
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
-                //app.UseBrowserLink();
+                app.UseBrowserLink();
             }
             else
             {
@@ -64,6 +65,19 @@ namespace CraftOrBuy
 
             db.Database.Migrate();
 
+            app.Use(async (context, next) =>
+            {
+                await next();
+
+                if (context.Response.StatusCode == 404
+                    && !Path.HasExtension(context.Request.Path.Value))
+                {
+                    context.Request.Path = "/index/html";
+                    await next();
+                }
+            });
+
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
