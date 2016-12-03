@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CraftOrBuy.Models;
-using CraftOrBuy.DAL;
-using Microsoft.Data.Entity;
+using CraftOrBuy.Data;
 
 namespace CraftOrBuy.Repositories
 {
@@ -41,7 +40,7 @@ namespace CraftOrBuy.Repositories
 
         public IEnumerable<Recipe> RetrieveRecipies()
         {
-            IEnumerable<Recipe> recipes = _db.Recipes.AsNoTracking();
+            IEnumerable<Recipe> recipes = _db.Recipes.AsEnumerable();
 
             return recipes;
         }

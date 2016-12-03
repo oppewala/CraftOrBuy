@@ -12,6 +12,6 @@ namespace CraftOrBuy.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public Dictionary<int, int> Materials { get; set; }
+        public List<Item> Materials { get; set; }
     }
 }

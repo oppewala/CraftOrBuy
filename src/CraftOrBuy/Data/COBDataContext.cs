@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CraftOrBuy.DAL
+namespace CraftOrBuy.Data
 {
     public class COBDataContext : DbContext
     {
