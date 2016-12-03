@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CraftOrBuy.Repositories
 {
-    interface IRecipesRepository
+    public interface IRecipesRepository
     {
         IEnumerable<Recipe> RetrieveRecipies();
         Recipe RetrieveRecipe(int id);

@@ -11,51 +11,52 @@ using CraftOrBuy.Repositories;
 namespace CraftOrBuy.Controllers
 {
     [Route("api/[controller]")]
-    public class RecipesController : Controller
+    public class ItemsController : Controller
     {
-        private readonly IRecipesRepository _recipes;
+        private readonly IItemsRepository _items;
 
-        public RecipesController(IRecipesRepository recipes)
+        public ItemsController(IItemsRepository items)
         {
-            _recipes = recipes;
+            _items = items;
         }
 
         // GET: api/values
         [HttpGet]
         public IActionResult Get()
         {
-            IEnumerable<Recipe> recipes = _recipes.RetrieveRecipies();
-            return Ok(recipes);
+            IEnumerable<Item> items = _items.RetrieveRecipies();
+
+            return Ok(items);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            Recipe recipe = _recipes.RetrieveRecipe(id);
-            if (recipe == null)
+            Item item = _items.RetrieveItem(id);
+            if (item == null)
             {
                 return NotFound();
             }
 
-            return Ok(recipe);
+            return Ok(item);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Recipe recipe)
+        public IActionResult Post([FromBody]Item item)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            Recipe createdRecipe = _recipes.AddRecipe(recipe);
+            Item createdItem = _items.AddItem(item);
 
-            return CreatedAtAction(nameof(Get), new { id = createdRecipe.Id }, createdRecipe);
+            return CreatedAtAction(nameof(Get), new { id = createdItem.Id }, createdItem);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]Recipe recipe)
+        public IActionResult Put(int id, [FromBody]Item item)
         {
             if (!ModelState.IsValid)
             {
@@ -64,10 +65,10 @@ namespace CraftOrBuy.Controllers
 
             try
             {
-                _recipes.UpdateRecipe(id, recipe);
+                _items.UpdateItem(id, item);
                 return Ok();
             }
-            catch (EntityNotFoundException<Recipe>)
+            catch (EntityNotFoundException<Item>)
             {
                 return NotFound();
             }
@@ -76,7 +77,7 @@ namespace CraftOrBuy.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _recipes.DeleteRecipe(id);
+            _items.DeleteItem(id);
             return Ok();
         }
     }

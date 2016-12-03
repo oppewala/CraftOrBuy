@@ -11,7 +11,7 @@ namespace CraftOrBuy.Repositories
     {
         private readonly COBDataContext _db;
 
-        RecipesRepository(COBDataContext db)
+        public RecipesRepository(COBDataContext db)
         {
             _db = db;
         }

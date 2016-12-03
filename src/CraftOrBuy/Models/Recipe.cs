@@ -10,6 +10,8 @@ namespace CraftOrBuy.Models
     {
         [Key]
         public int Id { get; set; }
+
+        public int BlizzardRecipeId { get; set; }
         public string Name { get; set; }
 
         public List<Item> Materials { get; set; }
