@@ -47,8 +47,7 @@
 	"use strict";
 	var platform_browser_dynamic_1 = __webpack_require__(1);
 	var app_module_1 = __webpack_require__(23);
-	var platform = platform_browser_dynamic_1.platformBrowserDynamic();
-	platform.bootstrapModule(app_module_1.AppModule);
+	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ },
@@ -42582,7 +42581,7 @@
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: "my-app",
-	            template: "\n    <h1>My First Angular 2 App</h1>\n    <ul>\n    <li *ngFor=\"let person of persons\">\n    <strong></strong><br>\n    from: <br>\n    date of birth: \n    </li>\n    </ul>\n    ",
+	            template: "\n    <h1>My First Angular 2 App</h1>\n    <ul>\n    <li *ngFor=\"let item of items\">\n    <strong></strong><br>\n    name: {{ item.name }}<br>\n    desc: {{ item.description }}\n    </li>\n    </ul>\n    ",
 	            providers: [
 	                item_service_1.ItemService
 	            ]

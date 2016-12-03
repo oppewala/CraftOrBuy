@@ -6,10 +6,10 @@ import { ItemService, Item } from "./item.service";
     template: `
     <h1>My First Angular 2 App</h1>
     <ul>
-    <li *ngFor="let person of persons">
+    <li *ngFor="let item of items">
     <strong></strong><br>
-    from: <br>
-    date of birth: 
+    name: {{ item.name }}<br>
+    desc: {{ item.description }}
     </li>
     </ul>
     `,
