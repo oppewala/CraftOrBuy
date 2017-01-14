@@ -42,16 +42,22 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/*!*****************************!*\
+  !*** ./wwwroot/app/main.ts ***!
+  \*****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var platform_browser_dynamic_1 = __webpack_require__(1);
-	var app_module_1 = __webpack_require__(23);
+	var platform_browser_dynamic_1 = __webpack_require__(/*! @angular/platform-browser-dynamic */ 1);
+	var app_module_1 = __webpack_require__(/*! ./app.module */ 23);
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ },
 /* 1 */
+/*!*************************************************************************************!*\
+  !*** ./~/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js ***!
+  \*************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -60,7 +66,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(2), __webpack_require__(3), __webpack_require__(21)) :
+	     true ? factory(exports, __webpack_require__(/*! @angular/compiler */ 2), __webpack_require__(/*! @angular/core */ 3), __webpack_require__(/*! @angular/platform-browser */ 21)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/compiler', '@angular/core', '@angular/platform-browser'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.platformBrowserDynamic = global.ng.platformBrowserDynamic || {}),global.ng.compiler,global.ng.core,global.ng.platformBrowser));
 	}(this, function (exports,_angular_compiler,_angular_core,_angular_platformBrowser) { 'use strict';
@@ -265,6 +271,9 @@
 
 /***/ },
 /* 2 */
+/*!*****************************************************!*\
+  !*** ./~/@angular/compiler/bundles/compiler.umd.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -273,7 +282,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	   true ? factory(exports, __webpack_require__(3)) :
+	   true ? factory(exports, __webpack_require__(/*! @angular/core */ 3)) :
 	  typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
 	  (factory((global.ng = global.ng || {}, global.ng.compiler = global.ng.compiler || {}),global.ng.core));
 	}(this, function (exports,_angular_core) { 'use strict';
@@ -17959,6 +17968,9 @@
 
 /***/ },
 /* 3 */
+/*!*********************************************!*\
+  !*** ./~/@angular/core/bundles/core.umd.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -17967,7 +17979,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(4), __webpack_require__(5)) :
+	     true ? factory(exports, __webpack_require__(/*! rxjs/Subject */ 4), __webpack_require__(/*! rxjs/Observable */ 5)) :
 	    typeof define === 'function' && define.amd ? define(['exports', 'rxjs/Subject', 'rxjs/Observable'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.core = global.ng.core || {}),global.Rx,global.Rx));
 	}(this, function (exports,rxjs_Subject,rxjs_Observable) { 'use strict';
@@ -27899,6 +27911,9 @@
 
 /***/ },
 /* 4 */
+/*!***************************!*\
+  !*** ./~/rxjs/Subject.js ***!
+  \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27907,12 +27922,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(5);
-	var Subscriber_1 = __webpack_require__(8);
-	var Subscription_1 = __webpack_require__(10);
-	var ObjectUnsubscribedError_1 = __webpack_require__(19);
-	var SubjectSubscription_1 = __webpack_require__(20);
-	var rxSubscriber_1 = __webpack_require__(17);
+	var Observable_1 = __webpack_require__(/*! ./Observable */ 5);
+	var Subscriber_1 = __webpack_require__(/*! ./Subscriber */ 8);
+	var Subscription_1 = __webpack_require__(/*! ./Subscription */ 10);
+	var ObjectUnsubscribedError_1 = __webpack_require__(/*! ./util/ObjectUnsubscribedError */ 19);
+	var SubjectSubscription_1 = __webpack_require__(/*! ./SubjectSubscription */ 20);
+	var rxSubscriber_1 = __webpack_require__(/*! ./symbol/rxSubscriber */ 17);
 	/**
 	 * @class SubjectSubscriber<T>
 	 */
@@ -28064,12 +28079,15 @@
 
 /***/ },
 /* 5 */
+/*!******************************!*\
+  !*** ./~/rxjs/Observable.js ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
-	var toSubscriber_1 = __webpack_require__(7);
-	var observable_1 = __webpack_require__(18);
+	var root_1 = __webpack_require__(/*! ./util/root */ 6);
+	var toSubscriber_1 = __webpack_require__(/*! ./util/toSubscriber */ 7);
+	var observable_1 = __webpack_require__(/*! ./symbol/observable */ 18);
 	/**
 	 * A representation of any set of values over any amount of time. This the most basic building block
 	 * of RxJS.
@@ -28209,6 +28227,9 @@
 
 /***/ },
 /* 6 */
+/*!*****************************!*\
+  !*** ./~/rxjs/util/root.js ***!
+  \*****************************/
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {"use strict";
@@ -28230,11 +28251,14 @@
 
 /***/ },
 /* 7 */
+/*!*************************************!*\
+  !*** ./~/rxjs/util/toSubscriber.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Subscriber_1 = __webpack_require__(8);
-	var rxSubscriber_1 = __webpack_require__(17);
+	var Subscriber_1 = __webpack_require__(/*! ../Subscriber */ 8);
+	var rxSubscriber_1 = __webpack_require__(/*! ../symbol/rxSubscriber */ 17);
 	function toSubscriber(nextOrObserver, error, complete) {
 	    if (nextOrObserver) {
 	        if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -28254,6 +28278,9 @@
 
 /***/ },
 /* 8 */
+/*!******************************!*\
+  !*** ./~/rxjs/Subscriber.js ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28262,10 +28289,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isFunction_1 = __webpack_require__(9);
-	var Subscription_1 = __webpack_require__(10);
-	var Observer_1 = __webpack_require__(16);
-	var rxSubscriber_1 = __webpack_require__(17);
+	var isFunction_1 = __webpack_require__(/*! ./util/isFunction */ 9);
+	var Subscription_1 = __webpack_require__(/*! ./Subscription */ 10);
+	var Observer_1 = __webpack_require__(/*! ./Observer */ 16);
+	var rxSubscriber_1 = __webpack_require__(/*! ./symbol/rxSubscriber */ 17);
 	/**
 	 * Implements the {@link Observer} interface and extends the
 	 * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -28508,6 +28535,9 @@
 
 /***/ },
 /* 9 */
+/*!***********************************!*\
+  !*** ./~/rxjs/util/isFunction.js ***!
+  \***********************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28519,15 +28549,18 @@
 
 /***/ },
 /* 10 */
+/*!********************************!*\
+  !*** ./~/rxjs/Subscription.js ***!
+  \********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var isArray_1 = __webpack_require__(11);
-	var isObject_1 = __webpack_require__(12);
-	var isFunction_1 = __webpack_require__(9);
-	var tryCatch_1 = __webpack_require__(13);
-	var errorObject_1 = __webpack_require__(14);
-	var UnsubscriptionError_1 = __webpack_require__(15);
+	var isArray_1 = __webpack_require__(/*! ./util/isArray */ 11);
+	var isObject_1 = __webpack_require__(/*! ./util/isObject */ 12);
+	var isFunction_1 = __webpack_require__(/*! ./util/isFunction */ 9);
+	var tryCatch_1 = __webpack_require__(/*! ./util/tryCatch */ 13);
+	var errorObject_1 = __webpack_require__(/*! ./util/errorObject */ 14);
+	var UnsubscriptionError_1 = __webpack_require__(/*! ./util/UnsubscriptionError */ 15);
 	/**
 	 * Represents a disposable resource, such as the execution of an Observable. A
 	 * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -28677,6 +28710,9 @@
 
 /***/ },
 /* 11 */
+/*!********************************!*\
+  !*** ./~/rxjs/util/isArray.js ***!
+  \********************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28685,6 +28721,9 @@
 
 /***/ },
 /* 12 */
+/*!*********************************!*\
+  !*** ./~/rxjs/util/isObject.js ***!
+  \*********************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28696,10 +28735,13 @@
 
 /***/ },
 /* 13 */
+/*!*********************************!*\
+  !*** ./~/rxjs/util/tryCatch.js ***!
+  \*********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var errorObject_1 = __webpack_require__(14);
+	var errorObject_1 = __webpack_require__(/*! ./errorObject */ 14);
 	var tryCatchTarget;
 	function tryCatcher() {
 	    try {
@@ -28720,6 +28762,9 @@
 
 /***/ },
 /* 14 */
+/*!************************************!*\
+  !*** ./~/rxjs/util/errorObject.js ***!
+  \************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28729,6 +28774,9 @@
 
 /***/ },
 /* 15 */
+/*!********************************************!*\
+  !*** ./~/rxjs/util/UnsubscriptionError.js ***!
+  \********************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28759,6 +28807,9 @@
 
 /***/ },
 /* 16 */
+/*!****************************!*\
+  !*** ./~/rxjs/Observer.js ***!
+  \****************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28772,10 +28823,13 @@
 
 /***/ },
 /* 17 */
+/*!***************************************!*\
+  !*** ./~/rxjs/symbol/rxSubscriber.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
+	var root_1 = __webpack_require__(/*! ../util/root */ 6);
 	var Symbol = root_1.root.Symbol;
 	exports.$$rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
 	    Symbol.for('rxSubscriber') : '@@rxSubscriber';
@@ -28783,10 +28837,13 @@
 
 /***/ },
 /* 18 */
+/*!*************************************!*\
+  !*** ./~/rxjs/symbol/observable.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
+	var root_1 = __webpack_require__(/*! ../util/root */ 6);
 	function getSymbolObservable(context) {
 	    var $$observable;
 	    var Symbol = context.Symbol;
@@ -28810,6 +28867,9 @@
 
 /***/ },
 /* 19 */
+/*!************************************************!*\
+  !*** ./~/rxjs/util/ObjectUnsubscribedError.js ***!
+  \************************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28842,6 +28902,9 @@
 
 /***/ },
 /* 20 */
+/*!***************************************!*\
+  !*** ./~/rxjs/SubjectSubscription.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28850,7 +28913,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscription_1 = __webpack_require__(10);
+	var Subscription_1 = __webpack_require__(/*! ./Subscription */ 10);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -28887,6 +28950,9 @@
 
 /***/ },
 /* 21 */
+/*!*********************************************************************!*\
+  !*** ./~/@angular/platform-browser/bundles/platform-browser.umd.js ***!
+  \*********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -28895,7 +28961,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(22), __webpack_require__(3)) :
+	     true ? factory(exports, __webpack_require__(/*! @angular/common */ 22), __webpack_require__(/*! @angular/core */ 3)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/common', '@angular/core'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.platformBrowser = global.ng.platformBrowser || {}),global.ng.common,global.ng.core));
 	}(this, function (exports,_angular_common,_angular_core) { 'use strict';
@@ -31954,6 +32020,9 @@
 
 /***/ },
 /* 22 */
+/*!*************************************************!*\
+  !*** ./~/@angular/common/bundles/common.umd.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -31962,7 +32031,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(3)) :
+	     true ? factory(exports, __webpack_require__(/*! @angular/core */ 3)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.common = global.ng.common || {}),global.ng.core));
 	}(this, function (exports,_angular_core) { 'use strict';
@@ -35330,6 +35399,9 @@
 
 /***/ },
 /* 23 */
+/*!***********************************!*\
+  !*** ./wwwroot/app/app.module.ts ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35342,12 +35414,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(3);
-	var http_1 = __webpack_require__(24);
-	var forms_1 = __webpack_require__(25);
-	var platform_browser_1 = __webpack_require__(21);
-	var app_component_1 = __webpack_require__(29);
-	var item_service_1 = __webpack_require__(30);
+	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	var http_1 = __webpack_require__(/*! @angular/http */ 24);
+	var forms_1 = __webpack_require__(/*! @angular/forms */ 25);
+	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 29);
+	var item_service_1 = __webpack_require__(/*! ./item.service */ 30);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -35372,6 +35444,9 @@
 
 /***/ },
 /* 24 */
+/*!*********************************************!*\
+  !*** ./~/@angular/http/bundles/http.umd.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -35380,7 +35455,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(3), __webpack_require__(5), __webpack_require__(21)) :
+	     true ? factory(exports, __webpack_require__(/*! @angular/core */ 3), __webpack_require__(/*! rxjs/Observable */ 5), __webpack_require__(/*! @angular/platform-browser */ 21)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/Observable', '@angular/platform-browser'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.http = global.ng.http || {}),global.ng.core,global.Rx,global.ng.platformBrowser));
 	}(this, function (exports,_angular_core,rxjs_Observable,_angular_platformBrowser) { 'use strict';
@@ -37647,6 +37722,9 @@
 
 /***/ },
 /* 25 */
+/*!***********************************************!*\
+  !*** ./~/@angular/forms/bundles/forms.umd.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -37655,7 +37733,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(3), __webpack_require__(26), __webpack_require__(4), __webpack_require__(5), __webpack_require__(27)) :
+	     true ? factory(exports, __webpack_require__(/*! @angular/core */ 3), __webpack_require__(/*! rxjs/operator/toPromise */ 26), __webpack_require__(/*! rxjs/Subject */ 4), __webpack_require__(/*! rxjs/Observable */ 5), __webpack_require__(/*! rxjs/observable/fromPromise */ 27)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/operator/toPromise', 'rxjs/Subject', 'rxjs/Observable', 'rxjs/observable/fromPromise'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.forms = global.ng.forms || {}),global.ng.core,global.Rx.Observable.prototype,global.Rx,global.Rx,global.Rx.Observable));
 	}(this, function (exports,_angular_core,rxjs_operator_toPromise,rxjs_Subject,rxjs_Observable,rxjs_observable_fromPromise) { 'use strict';
@@ -42378,10 +42456,13 @@
 
 /***/ },
 /* 26 */
+/*!**************************************!*\
+  !*** ./~/rxjs/operator/toPromise.js ***!
+  \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
+	var root_1 = __webpack_require__(/*! ../util/root */ 6);
 	/**
 	 * @param PromiseCtor
 	 * @return {Promise<T>}
@@ -42411,15 +42492,21 @@
 
 /***/ },
 /* 27 */
+/*!******************************************!*\
+  !*** ./~/rxjs/observable/fromPromise.js ***!
+  \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var PromiseObservable_1 = __webpack_require__(28);
+	var PromiseObservable_1 = __webpack_require__(/*! ./PromiseObservable */ 28);
 	exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 	//# sourceMappingURL=fromPromise.js.map
 
 /***/ },
 /* 28 */
+/*!************************************************!*\
+  !*** ./~/rxjs/observable/PromiseObservable.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42428,8 +42515,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var root_1 = __webpack_require__(6);
-	var Observable_1 = __webpack_require__(5);
+	var root_1 = __webpack_require__(/*! ../util/root */ 6);
+	var Observable_1 = __webpack_require__(/*! ../Observable */ 5);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -42546,6 +42633,9 @@
 
 /***/ },
 /* 29 */
+/*!**************************************!*\
+  !*** ./wwwroot/app/app.component.ts ***!
+  \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42563,8 +42653,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(3);
-	var item_service_1 = __webpack_require__(30);
+	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	var item_service_1 = __webpack_require__(/*! ./item.service */ 30);
 	var AppComponent = (function (_super) {
 	    __extends(AppComponent, _super);
 	    function AppComponent(_service) {
@@ -42581,7 +42671,7 @@
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: "my-app",
-	            template: "\n    <h1>My First Angular 2 App</h1>\n    <ul>\n    <li *ngFor=\"let item of items\">\n    <strong></strong><br>\n    name: {{ item.name }}<br>\n    desc: {{ item.description }}\n    </li>\n    </ul>\n    ",
+	            template: "\n    <h1>My First Angulaaaar 2 App</h1>\n    <ul>\n    <li *ngFor=\"let item of items\">\n    <strong>name: {{ item.name }}</strong><br>\n    id: {{ item.id }}<br>\n    desc: {{ item.description }}\n    </li>\n    </ul>\n    ",
 	            providers: [
 	                item_service_1.ItemService
 	            ]
@@ -42595,6 +42685,9 @@
 
 /***/ },
 /* 30 */
+/*!*************************************!*\
+  !*** ./wwwroot/app/item.service.ts ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42607,9 +42700,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(3);
-	var http_1 = __webpack_require__(24);
-	__webpack_require__(31);
+	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	var http_1 = __webpack_require__(/*! @angular/http */ 24);
+	__webpack_require__(/*! rxjs/add/operator/toPromise */ 31);
 	var ItemService = (function () {
 	    function ItemService(_http) {
 	        this._http = _http;
@@ -42624,6 +42717,7 @@
 	    ItemService.prototype.extractArray = function (res, showprogress) {
 	        if (showprogress === void 0) { showprogress = true; }
 	        var data = res.json();
+	        console.log(data);
 	        return data || [];
 	    };
 	    ItemService.prototype.handleErrorPromise = function (error) {
@@ -42656,11 +42750,14 @@
 
 /***/ },
 /* 31 */
+/*!******************************************!*\
+  !*** ./~/rxjs/add/operator/toPromise.js ***!
+  \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(5);
-	var toPromise_1 = __webpack_require__(26);
+	var Observable_1 = __webpack_require__(/*! ../../Observable */ 5);
+	var toPromise_1 = __webpack_require__(/*! ../../operator/toPromise */ 26);
 	Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
 	//# sourceMappingURL=toPromise.js.map
 

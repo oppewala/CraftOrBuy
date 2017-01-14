@@ -16,6 +16,7 @@ export class ItemService {
 
     protected extractArray(res: Response, showprogress: boolean = true) {
         let data = res.json();
+        console.log(data);
         return data || [];
     }
 
